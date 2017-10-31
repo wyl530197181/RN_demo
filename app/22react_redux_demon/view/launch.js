@@ -9,13 +9,35 @@ import {connect, Provider} from 'react-redux';
 import {plus, reduce} from '../action/action';
 import {getStore} from '../store/store';
 
-const store = getStore();
+// const store = getStore();
 
 export default class ReduxDemo02 extends Component {
+    constructor() {
+        super();
+        this.state = {
+            store: null
+        }
+    }
+
+    componentDidMount() {
+        this.state.store = getStore();
+        this.setState({
+            store: this.state.store
+        })
+    }
+
     render() {
-        console.log(store);
+        if (!this.state.store) {
+            return (
+                <View style={styles.container}>
+                    <Text>
+                        正在加载.....
+                    </Text>
+                </View>
+            )
+        }
         return (
-            <Provider store={store}>
+            <Provider store={this.state.store}>
                 <View style={styles.container}>
                     <Counter1/>
                     <Counter1/>
@@ -26,8 +48,8 @@ export default class ReduxDemo02 extends Component {
 }
 
 class __Counter1 extends Component {
-
     render() {
+        console.log(this.props);
         return (
             <View>
                 <View style={{flexDirection: 'row'}}>
@@ -54,24 +76,6 @@ class __Counter1 extends Component {
     }
 }
 
-class __Counter2 extends Component {
-
-
-    render() {
-        return (
-            <View style={{flexDirection: 'row'}}>
-                <Text style={{fontSize: 20, marginRight: 20}}>计数器：{this.props.calculate.c}</Text>
-                <Text style={{fontSize: 20}} onPress={this.addCounter.bind(this)}>点击我</Text>
-            </View>
-        );
-    }
-
-    addCounter() {
-        //生成一个action 分发
-        this.props.dispatch(plus(1));
-    }
-}
-
 //store (all)  结构
 /*store={
   calculate:{c:13},
@@ -92,7 +96,6 @@ const mapStateToProps = state => {
 
 
 let Counter1 = connect(mapStateToProps)(__Counter1);
-let Counter2 = connect(mapStateToProps)(__Counter2);
 
 const styles = StyleSheet.create({
     container: {
