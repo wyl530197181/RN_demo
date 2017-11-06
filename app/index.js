@@ -23,11 +23,9 @@ import {AppRegistry} from "react-native";
 // import TextInputDemon from './06_input_demo/TextInputDemon';
 // import TextInputTest from './06_input_demo/TextInputTest';
 // import TextInputExe from './06_input_demo/TextInput';
-import ReduxDemo02 from './22react_redux_demon/view/launch';
+// import ReduxDemo02 from './22react_redux_demon/view/launch';
 // import ReduxDemo from './21_react_redux_tolist/index';
 //  import WebViewDemo from './23_webView/launch';
-
-
 // import JsxDemon from './07_jsxDemon/JsxDemon';
 // import App from './08_react-native-router-flux/index';
 // import UselessTextInputMultiline from" ./test";
@@ -42,6 +40,10 @@ import ReduxDemo02 from './22react_redux_demon/view/launch';
 //import SimpleApp from './18_React Navigation/launch';
 //import FlatListTest from'./19_FlatList/launch';
 //import RefreshControlDemo from'./20_refreshControl/launch';
+import NetWork from'./50_netWork/netWork';
+
+
+
 //AppRegistry.registerComponent('HelloWorld', () => HelloWorld);
 // AppRegistry.registerComponent('HelloWorld', ()=>FlexTest);
 // AppRegistry.registerComponent('HelloWorld', () => FlexDiceTest);
@@ -71,6 +73,9 @@ import ReduxDemo02 from './22react_redux_demon/view/launch';
 //  AppRegistry.registerComponent('HelloWorld', () => SimpleApp);
 //   AppRegistry.registerComponent('HelloWorld', () => FlatListTest);
 // AppRegistry.registerComponent('HelloWorld', () => RefreshControlDemo);
-AppRegistry.registerComponent('HelloWorld', () => ReduxDemo02);
+// AppRegistry.registerComponent('HelloWorld', () => ReduxDemo02);
 // AppRegistry.registerComponent('HelloWorld', () => ReduxDemo);
 // AppRegistry.registerComponent('HelloWorld', () => WebViewDemo);
+
+
+AppRegistry.registerComponent('HelloWorld', () => NetWork);
